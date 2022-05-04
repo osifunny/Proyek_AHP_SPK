@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container-fluid">
+<div class="row" style="margin-top: 100px">
+<div class="col-md-8 mx-auto text-center">
+	<h2>Form Tambah Data</h2>
+<form action="/tambah/" method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<button class="btn btn-primary m-3">Tambah Data</button>
+</form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

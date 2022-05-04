@@ -1,0 +1,134 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container text-center" style="margin-top:100px;">
+<h1>Hasil Akhir</h1>
+<!-- TABEL 1 -->
+<table class="text-center table table-striped">
+	<thead>
+		<th>Tabel 1</th>
+		<th>Harga</th>
+		<th>Ram</th>
+		<th>Processor</th>
+		<th>Storage</th>
+		<th>Berat</th>
+	</thead>
+	{%for x in jadi%}
+	<tr>
+		{%for y in x%}
+		<td>
+		 {{y}}
+		 </td>
+		{%endfor%}
+
+	</tr>
+	{%endfor%}
+	<tr class="table-success">
+		<td>Total</td>
+			{%for y in T1%}
+		<td>
+		 {{y}}
+		 </td>
+		{%endfor%}
+	</tr>
+</table>
+
+
+<table class="text-center table table-striped">
+	<thead>
+		<th>Tabel 2</th>
+		<th>Harga</th>
+		<th>Ram</th>
+		<th>Processor</th>
+		<th>Storage</th>
+		<th>Berat</th>
+	</thead>
+	{%for x in Tabel2%}
+	<tr>
+		{%for y in x%}
+		<td>
+		 {{y}}
+		 </td>
+		{%endfor%}
+
+	</tr>
+	{%endfor%}
+	<tr class="table-success">
+		<td>Total</td>
+			{%for y in T2%}
+		<td>
+		 {{y}}
+		 </td>
+		{%endfor%}
+	</tr>
+</table>
+
+
+<table class="text-center table table-striped">
+	<thead>
+		<th>Rata-Rata</th>
+		<th>Harga</th>
+		<th>Ram</th>
+		<th>Processor</th>
+		<th>Storage</th>
+		<th>Berat</th>
+	</thead>
+	<tr class="table-success">
+		<td>Hasil</td>
+	{%for x in ratarata%}
+	
+		<td>
+		{{x}}
+	</td>
+		
+		{%endfor%}
+	</tr>
+</table>
+
+<table class="text-center table">
+	<thead>
+		<th>t</th>
+		<th>CI</th>
+		<th>RI</th>
+		<th>CR</th>
+	</thead>
+	<tr class="table-success">
+		<td>{%for x in t%}{{x}}{%endfor%}</td>
+		<td>{%for x in CI%}{{x}}{%endfor%}</td>
+		<td>1,12</td>
+		<td>{%for x in CR%}{{x}}{%endfor%}</td>
+	</tr>
+</table>
+
+
+<table class="text-center table table-striped">
+	<thead>
+		<th>No.</th>
+		<th>Nama</th>
+		<th>Harga</th>
+		<th>Ram</th>
+		<th>Processor</th>
+		<th>Storage</th>
+		<th>Berat</th>
+		<th>Rank</th>
+	</thead>
+	{%for x in Hasilakhir%}
+	<tr>
+		<td>{{forloop.counter}}</td>
+		{%for y in x%}
+		<td>
+		 {{y}}
+		 </td>
+		{%endfor%}
+
+	</tr>
+	{%endfor%}
+</table>
+
+
+
+
+</div>
+
+
+{% endblock %}

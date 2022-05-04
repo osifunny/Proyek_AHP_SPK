@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container-fluid">
+<div class="row" style="margin-top: 100px">
+<div class="col-md-8 mx-auto text-center">
+    <h1>List Laptop</h1>
+    <br>
+    <table class="text-center table table-striped" style="width: 100%;border-left: solid;border-right: solid;border-bottom: solid;">
+<thead class="thead-dark">
+    <th>No.</th>
+<th>Nama</th>
+<th>Harga</th>
+<th>Ram</th>
+<th>Processor</th>
+<th>Storage</th>
+<th>Berat</th>
+<th>Action</th>
+
+</thead>
+<tbody>
+{%for x in laptop%}
+    <tr>
+        <td>{{forloop.counter}}.</td>
+    <td>{{ x.Laptop }}</td>
+    <td>{{ x.Harga }}</td>
+    <td>{{ x.RAM }} GB</td>
+    <td>{{ x.Processor }}</td>
+    <td>{{ x.Storage }} GB</td>
+    <td>{{ x.Berat }} KG</td>
+    <td>
+        <a href="/index/ubah_data/{{x.id}}" class="btn btn-primary m-1">EDIT</a>
+        <a href="/index/hapus_data/{{x.id}}" class="btn btn-danger">DELETE</a>
+    </td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container-fluid">
+<div class="row" style="margin-top: 100px">
+<div class="col-md-8 mx-auto text-center">
+	<h1>Form Nilai Kriteria</h1>
+	<br>
+<form action="/kriteria/" method="post">
+	{%csrf_token%}
+	<p>
+		<h4><label for="id_kharga">Nilai Kriteria harga</label></h3><input type="number" name="kharga" value="{{kharga}}" required id="id_kharga"></p>
+	<p>
+		<h4><label for="id_kram">Nilai Kriteria ram</label> </h4><input type="number" name="kram" value="{{kram}}" required id="id_kram"></p>
+	<p>
+		<h4><label for="id_kprocessor">Nilai Kriteria processor</label></h4> <input type="number" value="{{kprocessor}}" name="kprocessor"  required id="id_kprocessor"></p>
+	<p>
+		<h4><label for="id_kstorage">Nilai Kriteria storage</label> </h4><input type="number" name="kstorage" value="{{kstorage}}" required id="id_kstorage"></p>
+	<p>
+		<h4><label for="id_kberat">Nilai Kriteria berat</label></h4> <input type="number" name="kberat" value="{{kberat}}" required id="id_kberat"></p>
+	<button class="btn btn-primary m-3">Generate Data</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

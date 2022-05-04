@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container-fluid">
+<div class="row" style="margin-top: 100px">
+<div class="col-md-8 mx-auto text-center">
+	<h2>Form Ubah Data</h2>
+	<h1>{{laptop.laptop}}</h1>
+<form action="/index/ubah_data/{{laptop.id}}" method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<button class="btn btn-primary m-3">Ubah Data</button>
+</form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
